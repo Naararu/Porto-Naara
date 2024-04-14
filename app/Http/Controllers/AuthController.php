@@ -29,7 +29,7 @@ class AuthController extends Controller
         if($check > 0){
             $avatar_file = $id . ".jpg";
             $fileContent = file_get_contents($avatar);
-                File::put(public_path("administrator/images/faces/$avatar_file"), $fileContent);
+            File::put(public_path("administrator/images/faces/$avatar_file"), $fileContent);
 
 
             $user = User::updateOrCreate(
