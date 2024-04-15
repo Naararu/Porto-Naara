@@ -1,10 +1,12 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PageController;
-use Illuminate\Support\Facades\Auth;
+use Laravel\Socialite\Facades\Socialite;
+use App\Http\Controllers\EducationController;
+use App\Http\Controllers\ExperienceController;
 
  
 /*
@@ -37,5 +39,6 @@ Route::prefix('dashboard')->middleware('auth')->group(
     function(){
        Route::get('/', [PageController::class, 'index']);
        Route::resource('mainpage', PageController::class);
+       Route::resource('experience', ExperienceController::class);
     }
 );
