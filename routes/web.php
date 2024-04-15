@@ -40,5 +40,6 @@ Route::prefix('dashboard')->middleware('auth')->group(
        Route::get('/', [PageController::class, 'index']);
        Route::resource('mainpage', PageController::class);
        Route::resource('experience', ExperienceController::class);
+       Route::resource('education', EducationController::class);
     }
 );

@@ -49,7 +49,7 @@ class ExperienceController extends Controller
                 
             ],
             [
-                'judul.required' => 'Title cannot be empty',
+                'title.required' => 'Title cannot be empty',
                 'information1.required' => 'Company Name cannot be empty',
                 'tgl_mulai.required' => 'Start Date cannot be empty',
                 'isi.required' => 'Content cannot be empty'
@@ -91,7 +91,33 @@ class ExperienceController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $request->validate(
+            [
+                'title' => 'required',
+                'information1' => 'required',
+                'tgl_mulai' => 'required',
+                'content' => 'required'
+                
+            ],
+            [
+                'title.required' => 'Title cannot be empty',
+                'information1.required' => 'Company Name cannot be empty',
+                'tgl_mulai.required' => 'Start Date cannot be empty',
+                'isi.required' => 'Content cannot be empty'
+            ]
+        );
+
+        $data = [
+            'title'=> $request->title,
+            'information1'=> $request->information1,
+            'type'=> $this->_type,
+            'tgl_mulai'=> $request->tgl_mulai,
+            'tgl_akhir'=> $request->tgl_akhir,
+            'content'=> $request->content
+        ];
+        riwayat::where('id', $id)->update($data);
+
+        return redirect()->route('experience.index')->with('success','experience data updated successfully');
     }
 
     /**

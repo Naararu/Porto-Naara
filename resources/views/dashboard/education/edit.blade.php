@@ -1,32 +1,56 @@
 @extends('dashboard/dashboard')
 @section('content')
-    <div class="pb-3"><a href="{{ route ('experience.index')}}" class="btn btn-secondary"> 
+    <div class="pb-3"><a href="{{ route ('education.index')}}" class="btn btn-secondary"> 
         << Back</a>
     </div>
-    <form action="{{ route ('experience.update', $data->id)}}" method="POST">
+    <form action="{{ route ('education.update', $data->id)}}" method="POST">
         @csrf
         @method('PUT')
         <div class="mb-3">
-            <label for="" class="form-label">Experience Title</label>
+            <label for="" class="form-label">University</label>
             <input
                 type="text"
                 class="form-control form-control-sm"
                 name="title"
                 id="title"
                 aria-describedby="helpId"
-                placeholder="Position" value="{{ $data->title }}"
+                placeholder="University" value="{{ $data->title }}"
             />
         </div>
 
         <div class="mb-3">
-            <label for="" class="form-label">Company Name</label>
+            <label for="" class="form-label">Faculty</label>
             <input
                 type="text"
                 class="form-control form-control-sm"
                 name="information1"
                 id="information1"
                 aria-describedby="helpId"
-                placeholder="Company Name" value="{{ $data->information1 }}"
+                placeholder="Faculty" value="{{ $data->information1}}"
+            />
+        </div>
+
+        <div class="mb-3">
+            <label for="" class="form-label">Major</label>
+            <input
+                type="text"
+                class="form-control form-control-sm"
+                name="information2"
+                id="information2"
+                aria-describedby="helpId"
+                placeholder="Major" value="{{ $data->information2}}"
+            />
+        </div>
+
+        <div class="mb-3">
+            <label for="" class="form-label">GPA</label>
+            <input
+                type="text"
+                class="form-control form-control-sm"
+                name="information3"
+                id="information3"
+                aria-describedby="helpId"
+                placeholder="GPA" value="{{ $data->information3}}"
             />
         </div>
 
@@ -36,23 +60,15 @@
                 <div class="col-auto"><input type="date" 
                     class="form-control form-control-sm" 
                     name="tgl_mulai" placeholder="dd/mm/yyyy" 
-                    value="{{ $data->tgl_mulai }}" >
+                    value="{{ $data->tgl_mulai}}" >
                 </div>
                 <div class="col-auto">End Date</div>
                 <div class="col-auto"><input type="date" 
                     class="form-control form-control-sm" 
                     name="tgl_akhir" placeholder="dd/mm/yyyy" 
-                    value="{{ $data->tgl_akhir }}">
+                    value="{{ $data->tgl_akhir}}">
                 </div>
             </div> 
-        </div>
-
-        <div class="mb-3">
-            <label for="" class="form-label">Content</label>
-            <textarea class="form-control summernote"
-                name="content"      
-                rows="5" >{{ Session::get('content')}}
-            </textarea>
         </div>
         <button class="btn btn-primary" name="save" type="submit">SAVE</button>
     </form>
