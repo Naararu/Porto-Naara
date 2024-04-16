@@ -52,7 +52,7 @@ class ExperienceController extends Controller
                 'title.required' => 'Title cannot be empty',
                 'information1.required' => 'Company Name cannot be empty',
                 'tgl_mulai.required' => 'Start Date cannot be empty',
-                'isi.required' => 'Content cannot be empty'
+                'content.required' => 'Content cannot be empty'
             ]
         );
 

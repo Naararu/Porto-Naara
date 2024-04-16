@@ -50,7 +50,7 @@ class EducationController extends Controller
             ],
             [
                 'title.required' => 'Title cannot be empty',
-                'information1.required' => 'Company Name cannot be empty',
+                'information2.required' => 'Company Name cannot be empty',
                 'tgl_mulai.required' => 'Start Date cannot be empty',
             ]
         );
