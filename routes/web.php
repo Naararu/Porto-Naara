@@ -9,6 +9,7 @@ use App\Http\Controllers\SkillController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\EducationController;
 use App\Http\Controllers\ExperienceController;
+use App\Http\Controllers\PageSettingsController;
 
  
 /*
@@ -47,5 +48,7 @@ Route::prefix('dashboard')->middleware('auth')->group(
        Route::post('skills', [SkillController::class, 'update'])->name('skill.update');
        Route::get('profile', [ProfileController::class, 'index'])->name('profile.index');
        Route::post('profile', [ProfileController::class, 'update'])->name('profile.update'); 
+       Route::get('pagesettings', [PageSettingsController::class, 'index'])->name('pagesettings.index'); 
+       Route::post('pagesettings', [PageSettingsController::class, 'update'])->name('pagesettings.update'); 
     }
 );

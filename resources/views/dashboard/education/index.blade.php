@@ -17,8 +17,9 @@
                 </tr>
             </thead>
             <tbody>
-                <?php $i = 1; ?>
+                <?php $i = 0; ?>
                 @foreach ($data as $item)
+                <?php $i++; ?>
                     <tr>
                         <td>{{ $i }}</td>
                         <td>{{ $item->title }}</td>
@@ -34,7 +35,7 @@
                                 class="d-inline" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-sm btn-danger" name="submit" type="submit">Delete</button>
+                                <button class="btn btn-sm btn-danger" name="submi t" type="submit">Delete</button>
                             </form>
                         </td>
                     </tr>

@@ -12,8 +12,9 @@
                 </tr>
             </thead>
             <tbody>
-                <?php $i = 1; ?>
+                <?php $i = 0; ?>
                 @foreach ($data as $item)
+                <?php $i++; ?>
                     <tr>
                         <td>{{ $i }}</td>
                         <td>{{ $item->title }}</td>
