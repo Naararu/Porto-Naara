@@ -51,7 +51,7 @@
             <label for="" class="form-label">Content</label>
             <textarea class="form-control summernote"
                 name="content"      
-                rows="5" >{{ Session::get('content')}}
+                rows="5" >{{ $data->content }}
             </textarea>
         </div>
         <button class="btn btn-primary" name="save" type="submit">SAVE</button>

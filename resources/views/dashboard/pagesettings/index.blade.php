@@ -5,12 +5,12 @@
     <form action="{{ route ('pagesettings.update')}}" method="POST">
         @csrf
         <div class="form-group row">
-            <label class="col-sm-2">About</label>
+            <label class="col-sm-2">Home</label>
             <div class="col-sm-6">
-                <select class="form-control form-control-sm" name="page_about" id="">
+                <select class="form-control form-control-sm" name="page_home" id="">
                     <option value="">-Choose-</option>
                     @foreach ($pagedata as $item)
-                        <option value="{{ $item->id}}" {{ get_value('page_about') == $item->id ? 'selected' : '' }} > {{ $item->title}}</option>
+                        <option value="{{ $item->id}}" {{ get_value('page_home') == $item->id ? 'selected' : '' }} > {{ $item->title}}</option>
                     @endforeach
                 </select>
             </div>

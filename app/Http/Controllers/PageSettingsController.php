@@ -15,7 +15,7 @@ class PageSettingsController extends Controller
     }
     public function update(Request $request)
     {
-        skills::updateOrCreate(['key' =>'page_about'], ['value'=>$request->page_about]);
+        skills::updateOrCreate(['key' =>'page_home'], ['value'=>$request->page_home]);
 
         return redirect()->route('pagesettings.index')->with('success','Page settings data updated successfully');
     }
